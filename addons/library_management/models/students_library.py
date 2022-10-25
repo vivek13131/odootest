@@ -13,3 +13,4 @@ class StudentsDetails(models.Model):
         ('information technology','INFOMATION TECHNOLOGY'),
         ('computer Engineering','COMPUTER ENGINEERING'),
     ], string=' Course ')
+    product_id= fields.Many2many('library.books',string="product")

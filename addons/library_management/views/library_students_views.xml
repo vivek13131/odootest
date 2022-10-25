@@ -34,9 +34,10 @@
 							<page string="More info" name="more info">
 								<group>
 									<group>
-										<field name="name"/>
-										<field name="address"/>
-										<field name ="address"/>
+<!--										<field name="name"/>-->
+<!--										<field name="address"/>-->
+<!--										<field name ="address"/>-->
+										<field name="product_id"/>
 									</group>
 								</group>
 							</page>
