@@ -10,5 +10,5 @@ class author(models.Model):
     awards = fields.Text(string="Awards")
     biography = fields.Text(string="Biography")
     image = fields.Binary(string="Image")
-    Books_ids = fields.Many2many('library.books',string="Books")
+    Books_ids = fields.Many2many('library.books', 'author_book_rel', 'author_id' 'book_id', string="Books")
 
