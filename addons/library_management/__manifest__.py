@@ -12,6 +12,7 @@
         'views/library_staff_views.xml',
         'views/library_students_views.xml',
         'views/library_admin_views.xml',
+        'views/library_author_views.xml',
         
     ],
     'demo': [],

@@ -6,7 +6,7 @@ class BooksDeatil(models.Model):
     _description = "library books"
 
     isbn = fields.Char(string="ISBN_no")
-    author_name = fields.Char(string="Author Name")
+    author_id = fields.Many2one('library.author',string="Author",)
     book_reference= fields.Text(string="Book Reference")
     name = fields.Char(string="Name")
     edition_mark = fields.Char(string="Edition Mark")
