@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<menuitem id="menu_library_main" name="Library" />
+<!--		<menuitem id="menu_library_main" name="Library" />-->
 		<menuitem id="menu_library" name="Book" parent="menu_library_main" />
 		<record id="view_library_book_tree" model="ir.ui.view">
 			<field name="name">library.bookstree.view</field>
 			<field name="model">library.books</field>
-			<field name="priority">2</field>
+			<field name="priority">5</field>
 			<field name="arch" type="xml">
 				<tree string="Library Book">
 					<field name="name"/>
 					<field name="status"/>
 					<field name ="author_id"/>
-					<field name ="category"/>
+					<field name ="category_id"/>
 					<field name="edition_mark"/>
 				</tree>
 			</field>
@@ -29,7 +29,7 @@
 								<field name="isbn"/>
 								<field name="name"/>
 								<field name ="author_id"/>
-								<field name ="category"/>
+								<field name ="category_id"/>
 								<field name="edition_mark"/>
 
 							</group>
@@ -39,7 +39,7 @@
 								<field name="volume_number"/>
 								<field name="book_reference"/>
 								<field name="status"/>
-								<field name="student_id"/>
+<!--								<field name="student_id"/>-->
 							</group>
 						</group>
 						<notebook>
@@ -48,7 +48,7 @@
 									<group>
 										<field name="name"/>
 										<field name="isbn"/>
-										<field name ="category"/>
+										<field name ="category_id"/>
 									</group>
 								</group>
 							</page>
@@ -71,15 +71,15 @@
 					<field name="name"/>
 					<field name="isbn"/>
 					<field name="author_id"/>
-					<field name="category"/>
-					<filter string="Noval" name="noval" domain="[('category', '=','noval')]"/>
-					<filter string="Fiction" name="fiction" domain="[('category', '=','fiction')]"/>
-					<filter string="Documentary" name="documentary" domain="[('category','=','documentary')]"/>
+					<field name="category_id"/>
+					<filter string="Noval" name="noval" domain="[('category_id', '=','noval')]"/>
+					<filter string="Fiction" name="fiction" domain="[('category_id', '=','fiction')]"/>
+					<filter string="Documentary" name="documentary" domain="[('category_id','=','documentary')]"/>
 					<group expand="0" string="Group By">
                         <filter string="name" name="name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="isbn" name="isbn" domain="[]" context="{'group_by':'isbn'}"/>
                         <filter string="author_id" name="author_id" domain="[]" context="{'group_by':'author_id'}"/>
-						<filter string="category" name="category" domain="[]" context="{'group_by':'category'}"/>
+						<filter string="category_id" name="category_id" domain="[]" context="{'group_by':'category_id'}"/>
                     </group>
 				</search>
 			</field>
@@ -93,7 +93,7 @@
 					<field name="isbn"/>
 					<field name="name"/>
 					<field name ="author_id"/>
-					<field name ="category"/>
+					<field name ="category_id"/>
 					<field name="edition_mark"/>
                     <field name="publication"/>
                     <field name="date_of_publication"/>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
+		<menuitem id="menu_library_main" name="Library" />
 		<menuitem id="library_admin" name="Librarian" parent="menu_library_main"/>
 		<record id="view_library_admin_tree" model="ir.ui.view">
 			<field name="name">library.admin.view</field>
 			<field name="model">library.admin</field>
-			<field name="priority">4</field>
+			<field name="priority">2</field>
 			<field name="arch" type="xml">
 				<tree string="Library admin">
 					<field name="name_id"/>

@@ -5,7 +5,7 @@
 		<record id="view_library_staff_tree" model="ir.ui.view">
 			<field name="name">library.staff.view</field>
 			<field name="model">library.staff</field>
-			<field name="priority">2</field>
+			<field name="priority">3</field>
 			<field name="arch" type="xml">
 				<tree string="Library staff">
 					<field name="name"/>
@@ -118,6 +118,6 @@
                 </p>
 			</field>
 		</record>
-		<menuitem id="menu_library_staff" name="Library" parent="menu_staff" action="action_library_staff"/>
+		<menuitem id="menu_library_staff" name="Library staff" parent="menu_staff" action="action_library_staff"/>
 	</data>
 </odoo>

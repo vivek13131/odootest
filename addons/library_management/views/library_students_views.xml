@@ -5,7 +5,7 @@
 		<record id="view_library_students_tree" model="ir.ui.view">
 			<field name="name">library.studentstree.view</field>
 			<field name="model">library.management</field>
-			<field name="priority">3</field>
+			<field name="priority">4</field>
 			<field name="arch" type="xml">
 				<tree string="Library students">
 					<field name="name"/>
