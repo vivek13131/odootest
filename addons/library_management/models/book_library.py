@@ -35,3 +35,9 @@ class BooksDeatil(models.Model):
         # print(self)
         result = super(BooksDeatil, self).unlink()
         return result
+
+    def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
+        result = super(BooksDeatil, self)._search(args=args, offset=offset, limit=limit, order=order, count=count,
+                                                  access_rights_uid=access_rights_uid)
+        print(self, result)
+        return result
