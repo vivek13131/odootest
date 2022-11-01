@@ -14,6 +14,9 @@
         'views/library_book_views.xml',
         'views/library_author_views.xml',
         'views/library_category_views.xml',
+        'views/library_fee_views.xml',
+        'views/library_admin_staff_book_views.xml',
+
 
         
     ],

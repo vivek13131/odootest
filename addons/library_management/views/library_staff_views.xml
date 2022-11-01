@@ -32,12 +32,10 @@
 							</group>
 						</group>
 						<notebook>
-							<page string="Staff" name="books">
+							<page string="Book info" name="book info">
 								<group>
 									<group>
-										<field name="name"/>
-										<field name="staff"/>
-										<field name ="branch"/>
+										<field name="Books_logs_id"/>
 									</group>
 								</group>
 							</page>
@@ -119,5 +117,7 @@
 			</field>
 		</record>
 		<menuitem id="menu_library_staff" name="Library staff" parent="menu_staff" action="action_library_staff"/>
+<!--		<menuitem id="menu_library_staff_admin" name="Library staff" parent="library_admin" action="action_library_staff"/>-->
+
 	</data>
 </odoo>

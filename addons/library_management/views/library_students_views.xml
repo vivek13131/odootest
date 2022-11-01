@@ -41,6 +41,15 @@
 									</group>
 								</group>
 							</page>
+							<page string="Book info">
+								<group>
+									<group>
+										<field name="book_taken"/>
+										<field name="book_return"/>
+										<field name="fee"/>
+									</group>
+								</group>
+							</page>
 						</notebook>
 					</sheet>
 				</form>

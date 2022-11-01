@@ -10,7 +10,13 @@ class StudentsDetails(models.Model):
     address = fields.Text(string='Address')
     mobile_no = fields.Char(string='Mobile Number')
     course = fields.Selection([
-        ('information technology','INFOMATION TECHNOLOGY'),
-        ('computer Engineering','COMPUTER ENGINEERING'),
+        ('information technology', 'INFOMATION TECHNOLOGY'),
+        ('computer Engineering', 'COMPUTER ENGINEERING'),
     ], string=' Course ')
-    product_id= fields.Many2many('library.books',string="product")
+    product_id = fields.Many2many('library.books', string="product")
+
+# book info page
+    book_taken = fields.Datetime(string="BOOK TAKEN DATE")
+    book_return = fields.Datetime(string="BOOK RETURN DATE")
+    fee = fields.Integer(string="FEE for Late ")
+
