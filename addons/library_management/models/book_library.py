@@ -22,11 +22,11 @@ class BooksDeatil(models.Model):
     @api.model
     def create(self, vals):
         result = super(BooksDeatil, self).create(vals)
-        # print("hello", self, vals)
+        print("hello",self,vals)
         return result
 
     def write(self, values):
-        # print(self, values)
+        print(self)
         result = super(BooksDeatil, self).write(values)
         # print(result)
         return result
@@ -34,10 +34,11 @@ class BooksDeatil(models.Model):
     def unlink(self):
         # print(self)
         result = super(BooksDeatil, self).unlink()
+        print(result)
         return result
 
-    def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
+    def _search(self, args, offset=0, limit=None, order=None, count=True, access_rights_uid=None):
         result = super(BooksDeatil, self)._search(args=args, offset=offset, limit=limit, order=order, count=count,
                                                   access_rights_uid=access_rights_uid)
-        print(self, result)
+        print(self,args,offset,limit,order,count,access_rights_uid,)
         return result

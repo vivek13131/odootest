@@ -76,7 +76,7 @@
 			<field name="view_mode">tree,form,kanban</field>
 			<field name="help" type="html">
 				<p class="oe_view_nocontent_create">
-                    Create new fee list
+                    Crate new fee list
                 </p>
 			</field>
 		</record>
