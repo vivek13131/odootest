@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models , _
 
 
 class BooksDeatil(models.Model):
@@ -8,7 +8,7 @@ class BooksDeatil(models.Model):
     isbn = fields.Char(string="ISBN_no")
     author_id = fields.Many2one('library.author', string="Author", )
     book_reference = fields.Text(string="Book Reference")
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Name", required=True, copy=False,)
     edition_mark = fields.Char(string="Edition Mark")
     date_of_publication = fields.Date(string="Date of Publication")
     volume_number = fields.Integer(string="Volume_numbers")
@@ -21,8 +21,11 @@ class BooksDeatil(models.Model):
     # The author id is connect to one2many moudle author.library
     @api.model
     def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+
+            vals['name'] = self.env['ir.sequence'].next_by_code('library.book') or 'NEW'
         result = super(BooksDeatil, self).create(vals)
-        print("hello",self,vals)
+        print(result)
         return result
 
     def write(self, values):

@@ -28,6 +28,7 @@
 								<field name="address"/>
 								<field name="mobile_no"/>
 								<field name="course"/>
+								<field name="date_of_birth"/>
 							</group>
 						</group>
 						<notebook>

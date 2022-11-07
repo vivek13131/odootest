@@ -1,4 +1,7 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
+from datetime import datetime, date, timedelta
 
 
 class StudentsDetails(models.Model):
@@ -14,9 +17,37 @@ class StudentsDetails(models.Model):
         ('computer Engineering', 'COMPUTER ENGINEERING'),
     ], string=' Course ')
     product_id = fields.Many2many('library.books', string="product")
+    date_of_birth = fields.Date(string="Dob",)
 
-# book info page
+    # book info page
     book_taken = fields.Datetime(string="BOOK TAKEN DATE")
     book_return = fields.Datetime(string="BOOK RETURN DATE")
     fee = fields.Integer(string="FEE for Late ")
 
+    @api.model
+    def create(self, vals):
+        dates = vals['date_of_birth']
+        # print(datetime.today().date())
+        if vals['date_of_birth']:
+            if str(dates) >= str(datetime.today().date()):
+                raise ValidationError(_('DOB should be less then Today\'s Date.'))
+
+        if not vals['date_of_birth']:
+            raise ValidationError(_("please enter your date birth"))
+
+        result = super(StudentsDetails, self).create(vals)
+        # print(datetime.today())
+        return result
+
+    def write(self, vals):
+        dates = vals['date_of_birth']
+        print(datetime.today().date())
+        print(dates)
+        if vals['date_of_birth']:
+            if str(dates) >= str(datetime.today().date()):
+                raise ValidationError(_('DOB should be less then Today\'s Date.'))
+        # if vals['date_of_birth']:
+        #      if (date==False):
+        #         raise ValidationError(_("hello"))
+
+        result = super(StudentsDetails, self).write(vals)

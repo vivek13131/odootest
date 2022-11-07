@@ -16,8 +16,6 @@
         'views/library_category_views.xml',
         'views/library_fee_views.xml',
         'views/library_admin_staff_book_views.xml',
-
-
         
     ],
     'demo': [],
